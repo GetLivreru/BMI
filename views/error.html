@@ -49,8 +49,7 @@
 
             Swal.fire({
                 icon: "error",
-                title: "Error " + code,
-                footer: '<a target="__blank" href="https://medium.com/@ansh.rathod/list-of-http-status-codes-every-web-developer-should-know-27952a1cf991">Why do I have this issue?</a>',
+                text: "Please fill out all fields.",
             }).then((result) => {
                 window.location.href = "/";
             });
