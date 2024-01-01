@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     
+  </nav>
+
+  <div class="container mt-5">
+    <h1>BMI Calculator</h1>
+    <form action="/bmicalculator" method="post" id="bmiForm">
+      <div class="form-group">
+        <label for="height">Height:</label>
+        <input type="number" class="form-control" id="height" name="height">
+      </div>
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="number" class="form-control" id="weight" name="weight">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" class="form-control" id="age" name="age">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="measurementSystem">Measurement System:</label>
+        <select class="form-control" id="measurementSystem" name="measurementSystem">
+          <option value="metric">Metric System (cm, kg)</option>
+          <option value="imperial">Imperial System (in, lbs)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+  
+    <div id="resultDiv">
+     
+    </div>
+  </div>
+
+  
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted"><label for="name">Adilet</label></span>
+      <span class="text-muted ml-3"><label for="surname">Kaiyrbekov</label></span>
+    </div>
+  </footer>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../public/script.js"></script>
+</body>
+</html>
