@@ -28,22 +28,6 @@ function calculateBMI(height, weight, age, unit) {
 router.get('/', (req, res) => {
     res.sendFile('index.html', { root: './views' });
 });
-// DB LOGIC
-const historyFilePath = __dirname + "/public/database/history.json";
-
-function readHistory() {
-    try {
-        const historyData = fs.readFileSync(historyFilePath, "utf8");
-        return JSON.parse(historyData);
-    } catch (error) {
-        return [];
-    }
-}
-
-function saveHistory(history) {
-    fs.writeFileSync(historyFilePath, JSON.stringify(history, null, 2), "utf8");
-}
-
 router.post('/bmicalculator', (req, res) => {
     const { height, weight, age, gender, unit } = req.body;
 
@@ -78,14 +62,13 @@ router.post('/bmicalculator', (req, res) => {
         } else {
             interpretation = 'Ожирение';
         }
+
     }
 
-    const result = {
-        bmi: calculatedBMI,
-        interpretation: interpretation
-    };
+    // Отправка HTML-ответа вместо JSON
+    const resultHTML = `<p>Your BMI is: <strong>${calculatedBMI}</strong></p>
+                       <p>Interpretation: <strong>${interpretation}</strong></p>`;
 
-    res.send(result);
+    res.send(resultHTML);
 });
-
 module.exports = router;
